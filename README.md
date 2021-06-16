@@ -9,7 +9,7 @@
 #### Then setup a virtual environment and install all of the dependencies with 
 `pip install -r requirements.txt`
 
-#### Then when you are done adding features just fork the repo and commit all of your changes. Finally make a pull request on the repo.
+#### Then when you are done adding features just fork the repo and commit all of your changes. Finally make a pull request here.
 
 ## Changelog
 
