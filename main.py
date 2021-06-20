@@ -16,15 +16,15 @@ import webbrowser
 import socket
 
 if platform == "android":
-    from android.permission import request_permissions
-    from android.permission import Permission
+    from android.permissions import request_permissions
+    from android.permissions import Permission
 
 Window.size = (1170/4, 2532/4)
 client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 class save_config_name(BoxLayout): pass
 
 class main(MDApp):
-    def on_enter(self):
+    def on_start(self):
         if platform == "android":
             request_permissions([
                 Permission.READ_EXTERNAL_STORAGE,
@@ -98,8 +98,10 @@ class main(MDApp):
         self.root.ids.server_port.text = ip_port[1]
 
     def import_config(self, server_ip, server_port):
-        with open("configs.txt", "r") as config_file:
+        with open("tcp_client_config.txt", "r") as config_file:
             bottom_sheet = MDListBottomSheet()
+            bottom_sheet.radius = 10
+            bottom_sheet.radius_from = "top"
             configs = config_file.readlines()
             for i in configs:
                 i = i.removesuffix("\n")
