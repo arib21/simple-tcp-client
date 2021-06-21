@@ -41,7 +41,21 @@ MDBoxLayout:
             on_release: app.disconnect(server_ip, server_port, disconnect_btn)
         
         MDFloatingActionButtonSpeedDial:
-            data: {"Save":"content-save", "Import":"import"}
+            id: speed_dial
+            data: {"Save":"content-save", "Import":"import", "Clear Logs": "notification-clear-all"}
             icon: "menu"
             root_button_anim: False
             callback: app.action_button_sorter
+
+        MDTextField:
+            id: output_area
+            pos_hint: {"x": 0.04, "top": 0.65}
+            size_hint_x: 0.92
+            font_size: "11sp"
+            hint_text: "Logs"
+            max_height: "175dp"
+            mode: "fill"
+            fill_color: 1, 1, 1, 0
+            radius: [0, 0, 0, 0]
+            multiline: True
+            readonly: True
